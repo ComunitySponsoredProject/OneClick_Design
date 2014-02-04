@@ -26,14 +26,14 @@
     <script type="text/javascript" src="~/js/jquery.masonry.min.js"></script>
     <link rel="stylesheet" href="~/css/flexslider.css" />
     <script type="text/javascript">
-		$(window).load(function() {
-		$('.flexslider').flexslider({
-				animation: "slide",<!--you can also choose fade here-->
-				directionNav: false,<!--Attention: if you choose true here, the nav-buttons will also appear in the ticker! -->
-				keyboardNav: true,
-				mousewheel: true
-		});
-		});
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "slide", //<!--you can also choose fade here-->
+                directionNav: false, //<!--Attention: if you choose true here, the nav-buttons will also appear in the ticker! -->
+            keyboardNav: true,
+            mousewheel: true
+        });
+        });
 	</script>  
     <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
     <!--[if lte IE 7]>
@@ -71,7 +71,7 @@
                         @if (User.IsInRole("admin"))
                         {
                             <li><a href="/Home/Index" class="active">Home</a></li>
-                            <li><a href="/Disorder/Adhd/">Edit Users</a></li>
+                            <li><a href="/Admin/EditUsers">Edit Users</a></li>
                 		    <li><a href="/Disorder/Dd">Create Articles</a></li>
                             <li><a href="#">Statistics</a></li>
                             <li><a href="contact.html">Contact</a></li>
