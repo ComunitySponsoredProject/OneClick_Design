@@ -68,12 +68,50 @@
                  
                     
                     <ul id="nav" class="main">
-                        <li><a href="/Home/Index" class="active">Home</a></li>
-                        <li><a href="/Disorder/Adhd/">ADHD</a></li>
-                		<li><a href="/Disorder/Dd">DD</a></li>
-                        <li><a href="#">Dummy 2</a></li>
-                        <li><a href="#">Dummy 3</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li><a href="/Home/Index" class="active">Home</a></li>
+                            <li><a href="/Disorder/Adhd/">Edit Users</a></li>
+                		    <li><a href="/Disorder/Dd">Create Articles</a></li>
+                            <li><a href="#">Statistics</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        }
+                        else if (User.IsInRole("educators"))
+                        {
+                            <li><a href="/Home/Index" class="active">Home</a></li>
+                            <li><a href="/General/Adhd/">ADHD</a></li>
+                		    <li><a href="/General/Dd">DD</a></li>
+                            <li><a href="/General/HD">HD</a></li>
+                            <li><a href="/General/TC">Technology center</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        }
+                        else if (User.IsInRole("agencies"))
+                        {
+                            <li><a href="/Home/Index" class="active">Home</a></li>
+                            <li><a href="/Disorder/Adhd/">ADHD</a></li>
+                		    <li><a href="/Disorder/Dd">DD</a></li>
+                            <li><a href="#">HD</a></li>
+                            <li><a href="#">Technology center</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        }
+                        else if (User.IsInRole("graduates"))
+                        {
+                            <li><a href="/Home/Index" class="active">Home</a></li>
+                            <li><a href="/Disorder/Adhd/">ADHD</a></li>
+                		    <li><a href="/Disorder/Dd">DD</a></li>
+                            <li><a href="#">HD</a></li>
+                            <li><a href="#">Technology center</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="/Home/Index" class="active">Home</a></li>
+                            <li><a href="/Disorder/Adhd/">ADHD</a></li>
+                		    <li><a href="/Disorder/Dd">DD</a></li>
+                            <li><a href="#">HD</a></li>
+                            <li><a href="#">Technology center</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        }
                     </ul>
                     
             
@@ -91,13 +129,13 @@
         <div id="footer">                
             <div class="grids">
                 <div class="grid-5 grid text-center">
-                    <p>&copy; Eve 2012 by <a href="http://sg-layout.com" title="SG-Layout Webdesign - contact me!"> SiGa</a></p>
+                    <p> Comunity Sponsored Project <a href="http://oneclick.com" title="Contact oneCLICK representative"></a></p>
                 </div>
                 <div class="grid-6 grid text-center">
-                    <p>Free responsive template v 1.0</p>
+                    <p>&copy; oneCLICK!</p>
                 </div>               
                 <div class="grid-5 grid text-center">
-                    <p>Contact me <a href="http://sg-layout.com/kontakt/" title="Contact me!">here</a></p>
+                    <p>Contact us <a href="http://oneclick.com/contact" title="Contact me!">here</a></p>
                 </div>                 
             </div><!--end of grids-->
         </div><!--end of footer-->

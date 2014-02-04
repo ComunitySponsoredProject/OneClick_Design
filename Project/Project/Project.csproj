@@ -183,6 +183,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DisorderController.cs" />
+    <Compile Include="Controllers\GeneralController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -428,9 +429,17 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Disorder\Adhd.cshtml" />
+    <Content Include="Views\Educators\Index.cshtml" />
+    <Content Include="Views\Educators\Contact.cshtml" />
+    <Content Include="Views\Educators\About.cshtml" />
+    <Content Include="Views\General\Adhd.cshtml" />
+    <Content Include="Views\General\Contact.cshtml" />
+    <Content Include="Views\General\TC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Agencies\" />
+    <Folder Include="Views\Graduates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -449,9 +458,9 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>63403</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53579/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
