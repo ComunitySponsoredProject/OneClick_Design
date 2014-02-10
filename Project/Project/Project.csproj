@@ -190,6 +190,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\HtmlHelpers.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -271,6 +272,7 @@
     <Content Include="Content\css\Oswald.woff" />
     <Content Include="Content\css\README inuit.md" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="Content\css\OpenSans-Light.ttf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="img\apple-touch-icon-114x114.png" />
     <Content Include="img\apple-touch-icon.png" />
@@ -433,9 +435,11 @@
     <Content Include="Views\Educators\Contact.cshtml" />
     <Content Include="Views\Educators\About.cshtml" />
     <Content Include="Views\General\Adhd.cshtml" />
-    <Content Include="Views\General\Contact.cshtml" />
     <Content Include="Views\General\TC.cshtml" />
     <Content Include="Views\Admin\EditUsers.cshtml" />
+    <Content Include="Views\Disorder\Dd.cshtml" />
+    <Content Include="Views\General\Dd.cshtml" />
+    <Content Include="Views\General\HD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -461,7 +465,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63403</DevelopmentServerPort>
+          <DevelopmentServerPort>53192</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:53579/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

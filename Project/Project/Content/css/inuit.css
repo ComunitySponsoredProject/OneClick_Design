@@ -1140,19 +1140,20 @@ object:after{
     margin: 0px 0px 10px;
     text-align: right;
     position:relative;
-    top:36px;
-    right:130px;
+    top:0px;
+    right:20px;
     z-index:999;
 }
 #headerLogin a {
-    background: #FFF url(../../img/button.png) repeat-x left top;
+    background: #2F3333 url(../../img/button.png) repeat-x left top;
     display:inline-block;
     padding:0px 20px;
     line-height:26px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid #2F3333;
     border-radius:5px;
-    color: #4a4a4a;
+    color: #FFF;
     text-decoration:none;
+    font-size:1.1em;
 }
 #headerLogin .username {
     background: none;
@@ -1209,4 +1210,69 @@ fieldset input[type="submit"]{
 }
 fieldset input[type="submit"]:hover {
     background-color:#C7CCCC;    
+}
+#colorfulBox1 {
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    float:left;
+    background-color:#0072B8;
+    text-align:center;
+    height:120px;
+    display:inline-block;
+    padding:60px 60px 0 60px;
+    border-radius:5px;
+    margin:0 3% 10px 0;
+}
+#colorfulBox2 {
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    float:left;
+    background-color:#D8670F;
+    text-align:center;
+    height:120px;
+    padding:60px 60px 0 60px;
+    border-radius:5px;
+    display:inline-block;
+    margin:0 15px 10px 0;
+}
+#colorfulBox3 {
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    float:left;
+    background-color:#D61D76;
+    text-align:center;
+    display:inline-block;
+    height:120px;
+    padding:60px 60px 0 60px;
+    border-radius:5px;
+    margin:0 3% 10px 0;
+}
+#colorfulBox4 {
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    float:left;
+    background-color:#ACA601;
+    text-align:center;
+    height:120px;
+    padding:60px 60px 0 60px;
+    border-radius:5px;
+    display:inline-block;
+    margin:0 3% 10px 0;
+}
+#colorfulBox5 {
+    color:#fff;
+    font-size:20px;
+    font-weight:bold;
+    float:left;
+    background-color:#9235A7;
+    text-align:center;
+    height:120px;
+    padding:60px 60px 0 60px;
+    display:inline-block;
+    border-radius:5px;
+    margin:0 3% 10px 0;
 }

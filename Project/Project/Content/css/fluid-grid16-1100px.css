@@ -1,10 +1,28 @@
 /*
 Page container
 */
+.headerWrapper {
+    width:100%;
+    float:left;
+}
+.headerWrapper .wrapper{
+	max-width:1080px;
+	margin:0 auto;
+	padding:0 1em 5.2em 1em;
+    background:#C6C6C6;
+}
+
+.footerWrapper .wrapper {
+    background:none;
+}
 .wrapper{
 	max-width:1080px;
 	margin:0 auto;
 	padding:1.5em 1em;
+    background: -webkit-linear-gradient(#C6C6C6 5%, #fff); /* For Safari */
+    background: -o-linear-gradient(#C6C6C6 5%, #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#C6C6C6 5%, #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#C6C6C6 5%, #fff); /* Standard syntax */
 }
 
 /*------------------------------------*\

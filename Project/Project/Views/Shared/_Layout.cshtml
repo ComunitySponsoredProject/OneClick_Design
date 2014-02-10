@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Project.HtmlHelpers
+<!DOCTYPE html>
 <html lang="de"><!-- use class="debug" here if you develope a template and want to check-->
 <head>
 	<meta charset="UTF-8" />
@@ -9,7 +10,7 @@
     <meta name="revisit-after" content="7 days" />
     <meta name="robots" content="index,follow" />
 	
-	<title>ResponseEve Template Home</title>
+	<title>Community sponsored project</title>
 			
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
@@ -32,7 +33,11 @@
                 directionNav: false, //<!--Attention: if you choose true here, the nav-buttons will also appear in the ticker! -->
             keyboardNav: true,
             mousewheel: true
-        });
+            });
+            $(".social a").mouseover(function () {
+               // var socialName = $(this).find("img").attr("alt");
+               // $(this).find("img").attr("src",'/img/'+socialName+'_on.png');
+            });
         });
 	</script>  
     <!--Hide the hr img because of ugly borders in IE7. You can change the color of border-top to display a line -->
@@ -48,17 +53,26 @@
 
 <body>      
     <!--HEADER-->
-    
+    <div class="headerWrapper">
     <div class="wrapper"><!--top menu-->
-                    <a href="index.html" id="logo"><img src="~/img/logo.png" alt="something" />
-                      <h1 class="accessibility">ResponseEve, a responsive template by SiGa</h1></a>
+                    <a href="/Home/Index" id="logo"><img src="~/img/icon.png" alt="something" />
+                      <!--<h1 class="accessibility">Community sponsored project</h1>--></a>
                    
                    <!--These are just samples, use your own icons. If you use larger ones, make sure too change the css-file to fit them in.
                        Dont´t forget to place your links -->
-                    <span id="headerLogin">@Html.Partial("_LoginPartial")</span>
+                    <span id="headerLogin">
+                            <ul>
+                            <li class="shopping-cart-status"><div id="dnn_dnnNCSHOPPINGCARTSTATUS_DivShoppingCartStatus" class="ncShoppingCartStatus"></div><a id="dnn_dnnNCSHOPPINGCARTSTATUS_ButtonUpdateShoppingCartStatus" href="javascript:__doPostBack('dnn$dnnNCSHOPPINGCARTSTATUS$ButtonUpdateShoppingCartStatus','')" style="display: none;">Update Cart Status</a></li>
+                            <li><a href="http://blackboard.niagaracollege.ca" class="a-btn btn-sign-in">Sign In</a></li>
+                            <li><a href="http://www.niagaracollege.ca/library" class="a-btn">Library</a></li>
+                            <li><a href="http://www.niagaracollege.ca/sitemap" class="a-btn">Site Map</a></li>
+                            <li><a href="#content" class="a-btn">Skip to Content</a></li>
+                            </ul>
+                    </span>
+                    <span id="headerLogin" style="display:none;">@Html.Partial("_LoginPartial")</span>
                     <div class="social">   
-                    <a href="http://www.facebook.com/profile.php?id=100001520859552" title="facebook"><img src="~/img/facebook.png" width="20" height="20" alt="facebook"></a>
-                    <a href="http://twitter.com/#!/sg_layout" title="twitter"><img src="~/img/twitter.png" width="20" height="20" alt="twitter"></a>
+                    <a href="#" title="facebook"><img src="~/img/facebook.png" width="20" height="20" alt="facebook"></a>
+                    <a href="#" title="twitter"><img src="~/img/twitter.png" width="20" height="20" alt="twitter"></a>
                     <a href="#" title="linkedin"><img src="~/img/linkedin.png" width="20" height="20" alt="linkedin"></a>
                     <a href="#" title="vcard"><img src="~/img/vcard.png" width="20" height="20" alt="vcard"></a>
                     <a href="#" title="picasa"><img src="~/img/picasa.png" width="20" height="20" alt="picasa"></a>
@@ -66,7 +80,7 @@
                         
                     </div>
                  
-                    
+
                     <ul id="nav" class="main">
                         @if (User.IsInRole("admin"))
                         {
@@ -74,48 +88,49 @@
                             <li><a href="/Admin/EditUsers">Edit Users</a></li>
                 		    <li><a href="/Disorder/Dd">Create Articles</a></li>
                             <li><a href="#">Statistics</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
                         }
                         else if (User.IsInRole("educators"))
                         {
-                            <li><a href="/Home/Index" class="active">Home</a></li>
-                            <li><a href="/General/Adhd/">ADHD</a></li>
-                		    <li><a href="/General/Dd">DD</a></li>
+							<li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = Html.ActivePage("Home", "Index") })</li>
+                        	<li>@Html.ActionLink("ADHD", "Adhd", "General", null, new { @class = Html.ActivePage("General", "Adhd") })</li>
+                			<li>@Html.ActionLink("DD", "Dd", "General", null, new { @class = Html.ActivePage("General", "Dd") })</li>
                             <li><a href="/General/HD">HD</a></li>
                             <li><a href="/General/TC">Technology center</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
                         }
                         else if (User.IsInRole("agencies"))
                         {
-                            <li><a href="/Home/Index" class="active">Home</a></li>
-                            <li><a href="/Disorder/Adhd/">ADHD</a></li>
-                		    <li><a href="/Disorder/Dd">DD</a></li>
+                            <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = Html.ActivePage("Home", "Index") })</li>
+                         	<li>@Html.ActionLink("ADHD", "Adhd", "Disorder", null, new { @class = Html.ActivePage("Disorder", "Adhd") })</li>
+                 			<li>@Html.ActionLink("DD", "Dd", "Disorder", null, new { @class = Html.ActivePage("Disorder", "Dd") })</li>
                             <li><a href="#">HD</a></li>
-                            <li><a href="#">Technology center</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/General/TC">Technology center</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
                         }
                         else if (User.IsInRole("graduates"))
                         {
-                            <li><a href="/Home/Index" class="active">Home</a></li>
-                            <li><a href="/Disorder/Adhd/">ADHD</a></li>
-                		    <li><a href="/Disorder/Dd">DD</a></li>
+                            <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = Html.ActivePage("Home", "Index") })</li>
+                         	<li>@Html.ActionLink("ADHD", "Adhd", "Disorder", null, new { @class = Html.ActivePage("Disorder", "Adhd") })</li>
+                 			<li>@Html.ActionLink("DD", "Dd", "Disorder", null, new { @class = Html.ActivePage("Disorder", "Dd") })</li>
                             <li><a href="#">HD</a></li>
-                            <li><a href="#">Technology center</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/General/TC">Technology center</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
                         }
                         else
                         {
-                            <li><a href="/Home/Index" class="active">Home</a></li>
-                            <li><a href="/Disorder/Adhd/">ADHD</a></li>
-                		    <li><a href="/Disorder/Dd">DD</a></li>
+                            <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = Html.ActivePage("Home", "Index") })</li>
+                         	<li>@Html.ActionLink("ADHD", "Adhd", "Disorder", null, new { @class = Html.ActivePage("Disorder", "Adhd") })</li>
+                 			<li>@Html.ActionLink("DD", "Dd", "Disorder", null, new { @class = Html.ActivePage("Disorder", "Dd") })</li>
                             <li><a href="#">HD</a></li>
-                            <li><a href="#">Technology center</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/General/TC">Technology center</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
                         }
                     </ul>
                     
             
-        </div><!--end of wrapper top menu div-->    
+        </div><!--end of wrapper top menu div-->
+        </div>    
 	<div class="clear"></div> 
 
     
@@ -125,21 +140,23 @@
     <!--END OF MIDDLE PAGE-->
 
     <!-- FOOTER -->    
-    <div class="wrapper">
-        <div id="footer">                
-            <div class="grids">
-                <div class="grid-5 grid text-center">
-                    <p> Comunity Sponsored Project <a href="http://oneclick.com" title="Contact oneCLICK representative"></a></p>
-                </div>
-                <div class="grid-6 grid text-center">
-                    <p>&copy; oneCLICK!</p>
-                </div>               
-                <div class="grid-5 grid text-center">
-                    <p>Contact us <a href="http://oneclick.com/contact" title="Contact me!">here</a></p>
-                </div>                 
-            </div><!--end of grids-->
-        </div><!--end of footer-->
-    </div><!--end of wrapper-->
+    <div class="footerWrapper">
+        <div class="wrapper">
+            <div id="footer">                
+                <div class="grids">
+                    <div class="grid-5 grid text-center">
+                        <p> Comunity Sponsored Project <a href="http://oneclick.com" title="Contact oneCLICK representative"></a></p>
+                    </div>
+                    <div class="grid-6 grid text-center">
+                        <p>&copy; oneCLICK!</p>
+                    </div>               
+                    <div class="grid-5 grid text-center">
+                        <p>Contact us <a href="http://oneclick.com/contact" title="Contact me!">here</a></p>
+                    </div>                 
+                </div><!--end of grids-->
+            </div><!--end of footer-->
+        </div><!--end of wrapper-->
+    </div>
     <script type="text/javascript"> <!--Outdated browsers warning/message and link to Browser-Update. Comment or delete it if you don´t want to use it-->
         var $buoop = {} 
         $buoop.ol = window.onload; 
